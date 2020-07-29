@@ -11,7 +11,9 @@ import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.GridLayoutManager
+import com.app.olxapplication.BaseFragment
 import com.app.olxapplication.R
 import com.app.olxapplication.model.CategoriesModel
 import com.app.olxapplication.ui.home.adapter.CategoriesAdapter
@@ -20,7 +22,7 @@ import com.app.olxapplication.utilities.SharedPref
 import com.google.firebase.firestore.FirebaseFirestore
 import kotlinx.android.synthetic.main.fragment_home.*
 
-class HomeFragment : Fragment(), CategoriesAdapter.ItemClickListener {
+class HomeFragment : BaseFragment(), CategoriesAdapter.ItemClickListener {
 
     private lateinit var categoriesAdapter: CategoriesAdapter
     val db= FirebaseFirestore.getInstance()
@@ -76,7 +78,9 @@ class HomeFragment : Fragment(), CategoriesAdapter.ItemClickListener {
     }
 
     private fun getCategoryList() {
+        showProgressBar()
         db.collection("Categories").get().addOnSuccessListener {
+            hideProgressBar()
             categoriesModel = it.toObjects(CategoriesModel::class.java)
             setAdapter()
         }
@@ -90,6 +94,8 @@ class HomeFragment : Fragment(), CategoriesAdapter.ItemClickListener {
     }
 
     override fun onItemClick(position: Int) {
-        Toast.makeText(context,"Hey"+position,Toast.LENGTH_SHORT).show()
+        val bundle = Bundle()
+        bundle.putString(Constants.KEY,categoriesModel.get(position).key)
+        findNavController().navigate(R.id.action_home_to_browse,bundle)
     }
 }

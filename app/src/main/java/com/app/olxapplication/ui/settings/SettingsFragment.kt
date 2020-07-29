@@ -5,6 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.navigation.fragment.findNavController
 import com.app.olxapplication.BaseFragment
 import com.app.olxapplication.R
 import com.app.olxapplication.utilities.Constants
@@ -15,7 +16,7 @@ import kotlinx.android.synthetic.main.fragment_settings.edPhone
 import kotlinx.android.synthetic.main.fragment_settings.edPostalAddress
 import kotlin.concurrent.fixedRateTimer
 
-class SetttingsFragment : BaseFragment(){
+class SettingsFragment : BaseFragment(){
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -39,7 +40,7 @@ class SetttingsFragment : BaseFragment(){
     }
 
     private fun listener() {
-        textViewNext.setOnClickListener(View.OnClickListener {
+        textViewSave.setOnClickListener(View.OnClickListener {
             saveData()
         })
     }
@@ -55,7 +56,7 @@ class SetttingsFragment : BaseFragment(){
             SharedPref(requireActivity()).setString(Constants.USER_PHONE,edPhone.text.toString())
             SharedPref(requireActivity()).setString(Constants.USER_ADDRESS,edPostalAddress.text.toString())
             Toast.makeText(context,getString(R.string.saved_success),Toast.LENGTH_SHORT).show()
-            fragmentManager?.popBackStack()
+            findNavController().navigate(R.id.action_settings_to_profile)
 
         }
 

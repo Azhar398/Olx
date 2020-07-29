@@ -12,8 +12,13 @@
         android:title="@string/title_sell" />
 
     <item
-        android:id="@+id/navigation_notifications"
-        android:icon="@drawable/ic_notifications_black_24dp"
-        android:title="@string/title_notifications" />
+        android:id="@+id/navigation_my_ads"
+        android:icon="@drawable/ic_ads"
+        android:title="@string/title_my_Ads" />
+
+    <item
+        android:id="@+id/navigation_profile"
+        android:icon="@drawable/ic_userprofile"
+        android:title="@string/title_profile" />
 
 </menu>

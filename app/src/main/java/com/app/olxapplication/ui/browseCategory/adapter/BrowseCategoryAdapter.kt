@@ -1,4 +1,4 @@
-package com.app.olxapplication.ui.myAds.adapter
+package com.app.olxapplication.ui.browseCategory.adapter
 
 import android.content.Context
 import android.view.LayoutInflater
@@ -17,10 +17,10 @@ import com.bumptech.glide.Glide
 import de.hdodenhof.circleimageview.CircleImageView
 import java.text.SimpleDateFormat
 
-class MyAdsAdapter(
+class BrowseCategoryAdapter(
     var dataItemModel: MutableList<DataItemModel>,
     var mClickListener: ItemClickListener)
-    : RecyclerView.Adapter<MyAdsAdapter.ViewHolder>()
+    : RecyclerView.Adapter<BrowseCategoryAdapter.ViewHolder>()
 {
     private lateinit var context: Context
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
