@@ -1,0 +1,12 @@
+<component name="libraryTable">
+  <library name="Gradle: com.github.hkk595:Resizer:v1.5@aar">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/72702f1f992a3d7754b32310bc1dc446/jetified-Resizer-v1.5/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/72702f1f992a3d7754b32310bc1dc446/jetified-Resizer-v1.5/res" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.github.hkk595/Resizer/v1.5/6449a1ac40f4e7a4ab397a58bab016c3faed5f1/Resizer-v1.5-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>
